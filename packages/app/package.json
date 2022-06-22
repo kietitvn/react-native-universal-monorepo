@@ -14,11 +14,15 @@
     "@react-native-async-storage/async-storage": "^1.15.7",
     "@types/react": "^17.0.19",
     "@types/react-native": "^0.64.13",
-    "typescript": "^4.4.2"
+    "typescript": "^4.4.2",
+    "i18next": "^21.8.10",
+    "react-i18next": "^11.17.2"
   },
   "peerDependencies": {
     "@react-native-async-storage/async-storage": "*",
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "i18next": "*",
+    "react-i18next": "*"
   }
 }

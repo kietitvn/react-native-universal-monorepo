@@ -8,6 +8,7 @@
     "start": "react-native start",
     "studio": "studio android",
     "xcode": "xed ios",
+    "clean": "react-native clean-project-auto",
     "pods": "pod-install",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
@@ -16,7 +17,9 @@
   "dependencies": {
     "@my-app/app": "*",
     "@react-native-async-storage/async-storage": "^1.15.7",
+    "i18next": "^21.8.10",
     "react": "17.0.2",
+    "react-i18next": "^11.17.2",
     "react-native": "0.65.1"
   },
   "devDependencies": {
@@ -27,6 +30,7 @@
     "metro-config": "^0.66.2",
     "metro-react-native-babel-preset": "^0.66.0",
     "pod-install": "0.1.27",
+    "react-native-clean-project": "^4.0.1",
     "react-native-codegen": "^0.0.7",
     "react-native-monorepo-tools": "^1.1.0",
     "react-test-renderer": "17.0.2"

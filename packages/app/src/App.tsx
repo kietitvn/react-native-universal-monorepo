@@ -1,11 +1,14 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import {
+  Button,
   Image,
   ImageSourcePropType,
   Platform,
   SafeAreaView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from "react-native";
 import { AsyncStorageExample } from "./AsyncStorageExample";
@@ -16,11 +19,23 @@ export function App(): JSX.Element {
   const platformValue = subplatform
     ? `${Platform.OS} (${subplatform})`
     : Platform.OS;
+  const { t, i18n } = useTranslation();
   return (
     <SafeAreaView style={styles.root}>
       {/* On React Native for Web builds coming from CRA, TypeScript 
           complains about the image type, so we cast it as a workaround  */}
       <Image style={styles.logo} source={LogoSrc as ImageSourcePropType} />
+      <Text>{t("Home.HeyHome")}</Text>
+      <View style={styles.platformRow}>
+        <Button
+          onPress={() => i18n.changeLanguage("en")} //Here I change the language to "en" English
+          title="EN"
+        />
+        <Button
+          onPress={() => i18n.changeLanguage("vi")} //Here I change the language to "es" Spanish
+          title="VI"
+        />
+      </View>
       <Text style={styles.text}>Hello from React Native!</Text>
       <View style={styles.platformRow}>
         <Text style={styles.text}>Platform: </Text>
@@ -28,7 +43,7 @@ export function App(): JSX.Element {
           <Text style={styles.platformValue}>{platformValue}</Text>
         </View>
       </View>
-      <AsyncStorageExample/>
+      {/* <AsyncStorageExample /> */}
     </SafeAreaView>
   );
 }
@@ -65,5 +80,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: 6,
     borderRadius: 6,
     alignItems: "center",
-  }
+  },
 });
