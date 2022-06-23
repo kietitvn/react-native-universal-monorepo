@@ -15,8 +15,10 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.9",
     "@my-app/app": "*",
     "@react-native-async-storage/async-storage": "^1.15.7",
+    "graphql": "^16.5.0",
     "i18next": "^21.8.10",
     "react": "17.0.2",
     "react-i18next": "^11.17.2",

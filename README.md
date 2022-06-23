@@ -2,8 +2,9 @@
 
 # Road Map
 - [x] Multiple Language
-- [ ] Graphql
+- [x] Graphql
 - [ ] Navigation
+- [ ] Theme
 ## Supported platforms
 
 - Android (React Native 0.65)

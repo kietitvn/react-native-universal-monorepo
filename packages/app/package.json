@@ -16,13 +16,17 @@
     "@types/react-native": "^0.64.13",
     "typescript": "^4.4.2",
     "i18next": "^21.8.10",
-    "react-i18next": "^11.17.2"
+    "react-i18next": "^11.17.2",
+    "@apollo/client": "^3.6.9",
+    "graphql": "^16.5.0"
   },
   "peerDependencies": {
     "@react-native-async-storage/async-storage": "*",
     "react": "*",
     "react-native": "*",
     "i18next": "*",
-    "react-i18next": "*"
+    "react-i18next": "*",
+    "@apollo/client": "^3.6.9",
+    "graphql": "^16.5.0"
   }
 }

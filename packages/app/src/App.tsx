@@ -11,15 +11,19 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { AsyncStorageExample } from "./AsyncStorageExample";
-import { subplatform } from "./config";
-import LogoSrc from "./logo.png";
+import { AsyncStorageExample } from "./store/AsyncStorageExample";
+import LogoSrc from "./asset/logo.png";
+import { useQuery } from "@apollo/client";
+import { gqlSections } from "./graphql/query/section";
 
-export function App(): JSX.Element {
-  const platformValue = subplatform
-    ? `${Platform.OS} (${subplatform})`
-    : Platform.OS;
+const App = () => {
   const { t, i18n } = useTranslation();
+  const { data, loading } = useQuery(gqlSections, {
+    variables: { id: 1 },
+  });
+
+  console.log("data graphql 2:", data);
+
   return (
     <SafeAreaView style={styles.root}>
       {/* On React Native for Web builds coming from CRA, TypeScript 
@@ -36,17 +40,13 @@ export function App(): JSX.Element {
           title="VI"
         />
       </View>
-      <Text style={styles.text}>Hello from React Native!</Text>
-      <View style={styles.platformRow}>
-        <Text style={styles.text}>Platform: </Text>
-        <View style={styles.platformBackground}>
-          <Text style={styles.platformValue}>{platformValue}</Text>
-        </View>
-      </View>
+      <Text style={styles.text}>Hello VTSG!</Text>
       {/* <AsyncStorageExample /> */}
     </SafeAreaView>
   );
-}
+};
+
+export default App;
 
 const styles = StyleSheet.create({
   root: {
